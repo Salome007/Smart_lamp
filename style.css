@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", Roboto;
+}
+
+img {
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.thumbnail {
+  aspect-ratio: 1;
+  background: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-title {
+  font-size: 2em;
+  color: #333;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  color: #ffd700;
+}
+
+.review-count {
+  color: #666;
+}
+
+.price {
+  font-size: 1.5em;
+  color: #2c2c2c;
+  font-weight: bold;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features li:nth-of-type(1)::before {
+  content: "💥";
+  /* color: #4caf50; */
+}
+.features li:nth-of-type(2)::before {
+  content: "🔋";
+  /* color: #4caf50; */
+}
+.features li:nth-of-type(3)::before {
+  content: "🧲";
+  /* color: #4caf50; */
+}
+.features li:nth-of-type(4)::before {
+  content: "👁️";
+  /* color: #4caf50; */
+}
+
+.quantity-counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.quantity-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background: #e0e0e0;
+}
+
+.quantity {
+  font-size: 1.2em;
+  min-width: 40px;
+  text-align: center;
+}
+
+.buy-now {
+  padding: 15px 30px;
+  background: #1f2fc2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-now:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.offers {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+}
+
+.offers .box {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+.offers .box img {
+  margin-right: 1rem;
+}
+
+/* WHY CHOOSE US SECTION */
+
+.why-choose-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.small-heading {
+  color: #4a90e2;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.large-heading {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.review-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.reviewer-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.review-text {
+  text-align: center;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars-b {
+  color: #ffd700;
+  display: flex;
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .large-heading {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+}
+
+/* FREQUENTLY ASKED QUESTIONS SECTION */
+
+.faq-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.faq-heading {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.faq-heading.small {
+  font-size: 1.25em;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.faq-question {
+  background: #3498db;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question:hover {
+  background: #2980b9;
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  background: #f9f9f9;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 20px;
+}
+
+/* FOOTER SECTION */
+
+footer {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* .................. */
+
+.cont-b {
+  position: relative;
+}
+
+@media screen and (max-width: 500px) {
+  .container.b{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container.b.b2{
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.offer_btn {
+  position: absolute;
+  top: 237px;
+  right: 36px;
+  padding: 3px 10px;
+  font-weight: 700;
+  border-radius: 7px;
+  font-size: 0.7em;
+  color: rgb(199, 16, 16);
+  background: #fff;
+  border: 3px solid rgb(199, 16, 16);
+}
+
+.offer_btn:hover,
+.offer_btn:active {
+  background: rgb(199, 16, 16);
+  color: #fff;
+}
