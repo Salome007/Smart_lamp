@@ -287,12 +287,12 @@
           <div class="box">
             <img
               src="images/plane.png"
-              width="24px"
+              width="34px"
               alt="Free Delivery"
               style="border-radius: 0"
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
-            <div>
+            <div style="padding-right: 30px;">
               <h4
                 class="poppins-regular"
                 style="font-size: initial; font-weight: 700"
@@ -306,14 +306,14 @@
           <div class="box">
             <img
               src="images/hand.png"
-              width="24px"
+              width="34px"
               alt="After-Sale Service"
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
-            <div>
+            <div style="padding-right: 60px;">
               <h4
                 class="poppins-regular"
-                style="font-size: initial; font-weight: 700"
+                style="font-size: initial; font-weight: 700;"
               >
                 After-Sale Service
               </h4>
@@ -352,7 +352,7 @@
     </div>
 
     <div class="cont-nr b">
-      <div class="grid-b alt">
+      <div class="grid-b al">
         <div class="product-content-b alt">
           <h1 class="poppins-semibold">Battery-Powered Freedom</h1>
           <p>
@@ -372,6 +372,29 @@
             width="100%"
             onclick="addEventListener('contextmenu', event => event.preventDefault());"
           />
+        </div>
+      </div>
+
+      <div class="grid-b alt">
+        <div class="product-image-container-b alt">
+          <img
+            src="/images/img-2.jpg"
+            alt=""
+            width="100%"
+            onclick="addEventListener('contextmenu', event => event.preventDefault());"
+          />
+        </div>
+        <div class="product-content-b alt">
+          <h1 class="poppins-semibold">Battery-Powered Freedom</h1>
+          <p>
+            Experience the freedom of placing your Smart Glow Light anywhere,
+            without the need for cumbersome cords or proximity to power outlets.
+            The efficient battery-powered design ensures long-lasting
+            illumination, making it ideal for spaces where traditional lighting
+            solutions might not reach. It's portability means you can easily
+            move it around, providing light wherever it'd needed, whether it's
+            in a closet, hallway, or outdoors during evening events.
+          </p>
         </div>
       </div>
     </div>
@@ -435,6 +458,40 @@
         </p>
       </div>
     </div> -->
+
+    <div class="faq-container b" style="display: flex; justify-content: center; align-items: center;">
+      <div class="faq-item b one">
+        <img
+          src="images/offer.png"
+          alt=""
+          onclick="addEventListener('contextmenu', event => event.preventDefault());"
+        />
+        <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button>
+      </div>
+    </div>
+
+    <div class="faq-container" style="display: flex; justify-content: center;">
+      <div class="faq-item b">
+        <img
+          src="images/notice.jpg"
+          alt=""
+          onclick="addEventListener('contextmenu', event => event.preventDefault());"
+        />
+        <!-- <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button> -->
+      </div>
+    </div>
+
+    <div class="myiframe" id="yourFormId">
+      <iframe
+        id="iFrame1"
+        class="iframe"
+        src="https://app.snipercrm.io/formframe?formid=4b662ec015881&amp;c=0"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        name="snipercrmform"
+      ></iframe>
+    </div>
 
     <section class="why-choose-section">
       <h3 class="small-heading poppins-semibold">WHY CHOOSE US</h3>
@@ -526,28 +583,6 @@
       </div>
     </section>
 
-    <div class="faq-container" style="display: flex; justify-content: center; align-items: center;">
-      <div class="faq-item b one">
-        <img
-          src="images/offer.png"
-          alt=""
-          onclick="addEventListener('contextmenu', event => event.preventDefault());"
-        />
-        <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button>
-      </div>
-    </div>
-
-    <div class="faq-container" style="display: flex; justify-content: center;">
-      <div class="faq-item b">
-        <img
-          src="images/notice.jpg"
-          alt=""
-          onclick="addEventListener('contextmenu', event => event.preventDefault());"
-        />
-        <!-- <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button> -->
-      </div>
-    </div>
-
     <div class="faq-container">
       <h1 class="faq-heading small poppins-bold">Find Your Answers Here</h1>
       <h1 class="faq-heading poppins-bold">FREQUENTLY ASKED QUESTIONS</h1>
@@ -601,9 +636,30 @@
       </div>
     </div>
 
+    <div style="width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+      <button onclick="scrollToForm()" style="padding: 10px 20px; border: none; background: rgb(199, 16, 16); border-radius: 5px; font-weight: bold; color: #fff; font-size: larger;">BUY NOW</button>
+    </div>
+
     <footer>
       <p>Copyright &copy; 2024. All Rights Reserved</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://app.snipercrm.io/js/iframeResizer.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://app.snipercrm.io/js/iframeResizerFix.min.js"
+    ></script>
+    <script type="text/javascript">
+      document.getElementById("iFrame1").addEventListener("load", function () {
+        var iframeWindow = this.contentWindow;
+        var parentUrl = window.location.href;
+        iframeWindow.postMessage({ parentUrl: parentUrl }, "*");
+      });
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -635,11 +691,11 @@
         const thumbnails = document.querySelectorAll(".thumbnail");
         thumbnails.forEach((thumbnail, index) => {
           thumbnail.style.backgroundColor = `hsl(${index * 30}, 70%, 90%)`;
-          thumbnail.addEventListener("click", () => {
-            // Here you would typically switch the main image
-            // For this example, we'll just show which thumbnail was clicked
-            alert(`Thumbnail ${index + 1} clicked`);
-          });
+          // thumbnail.addEventListener("click", () => {
+          //   // Here you would typically switch the main image
+          //   // For this example, we'll just show which thumbnail was clicked
+          //   // alert(`Thumbnail ${index + 1} clicked`);
+          // });
         });
       });
 

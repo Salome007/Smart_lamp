@@ -574,6 +574,10 @@ footer {
   display: none;
 }
 
+.grid-b.alt{
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .mobile {
     display: block;
@@ -617,7 +621,7 @@ footer {
 
   .faq-container .faq-item.b.one{
     background: url(images/offer.png);
-    background-size: contain;
+    background-size: cover;
     width: 80%;
     /* width: 20em; */
     height: 15em;
@@ -629,8 +633,8 @@ footer {
 
   .offer_btn {
     position: absolute;
-    top: 120px;
-    right: 16px;
+    top: 137px;
+    right: 21px;
     padding: 2px 4px;
     padding-bottom: 1px;
     font-weight: 700;
@@ -647,5 +651,17 @@ footer {
 
   h2.large-heading.poppins-bold{
     font-size: x-large;
+  }
+
+  .faq-container.b{
+    padding: 0;
+  }
+
+  .grid-b.alt{
+    display: block;
+  }
+
+  .grid-b.al{
+    display: none;
   }
 }
