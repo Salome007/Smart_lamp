@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -115,12 +115,16 @@
   font-style: italic;
 }
 
-
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: xx-large;
 }
 
-p{
+p {
   font-size: x-large;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -133,7 +137,7 @@ img {
   pointer-events: none;
 }
 
-li{
+li {
   font-size: larger;
 }
 
@@ -385,7 +389,7 @@ li{
   gap: 2px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .large-heading {
     font-size: 2rem;
     padding: 0 1rem;
@@ -482,11 +486,58 @@ footer {
 
 /* .................. */
 
-.cont-b {
+.faq-item.b.one {
   position: relative;
 }
 
-@media screen and (max-width: 500px) {
+.cont-nr.b {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-b {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .grid-b {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-image-b {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.product-content-b {
+  padding: 20px;
+}
+
+.product-content-b h1 {
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2rem;
+}
+
+.product-content-b p {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* @media screen and (max-width: 500px) {
   .container.b{
     display: flex;
     flex-wrap: wrap;
@@ -498,12 +549,12 @@ footer {
     display: flex;
     flex-wrap: wrap-reverse;
   }
-}
+} */
 
 .offer_btn {
   position: absolute;
-  top: 237px;
-  right: 36px;
+  top: 235px;
+  right: 30px;
   padding: 3px 10px;
   font-weight: 700;
   border-radius: 7px;
@@ -517,4 +568,84 @@ footer {
 .offer_btn:active {
   background: rgb(199, 16, 16);
   color: #fff;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .offers {
+    display: flex;
+    /* justify-content: space-evenly; */
+    width: 100%;
+    /* text-align: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .offers .box {
+    display: flex;
+    justify-content: space-evenly;
+    border: 3px solid #333;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* text-align: center; */
+  }
+
+  .offers .box img {
+    margin-right: 0;
+  }
+
+  .faq-container .faq-item.b {
+    background: url(images/notice.jpg);
+    background-size: contain;
+    width: 80%;
+    /* width: 30em; */
+    height: 17em;
+  }
+
+  .faq-container .faq-item.b.one{
+    background: url(images/offer.png);
+    background-size: contain;
+    width: 80%;
+    /* width: 20em; */
+    height: 15em;
+  }
+
+  .faq-container .faq-item.b img{
+    display: none;
+  }
+
+  .offer_btn {
+    position: absolute;
+    top: 120px;
+    right: 16px;
+    padding: 2px 4px;
+    padding-bottom: 1px;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 0.35em;
+    color: rgb(199, 16, 16);
+    background: #fff;
+    border: 2px solid rgb(199, 16, 16);
+  }
+
+  .faq-answer p{
+    font-size:medium;
+  }
+
+  h2.large-heading.poppins-bold{
+    font-size: x-large;
+  }
 }
