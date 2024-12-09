@@ -210,7 +210,7 @@
           />
         </div>
         <div class="thumbnail-container">
-          <div class="thumbnail" onclick="scrollToForm()">
+          <div class="thumbnail active" data-image="img-1.jpg">
             <img
               src="images/img-1.jpg"
               alt=""
@@ -219,7 +219,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail" onclick="scrollToForm()">
+          <div class="thumbnail" data-image="img-2.jpg">
             <img
               src="images/img-2.png"
               alt=""
@@ -228,7 +228,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail" onclick="scrollToForm()">
+          <div class="thumbnail" data-image="img-3.png">
             <img
               src="images/img-3.png"
               alt=""
@@ -237,7 +237,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail" onclick="scrollToForm()">
+          <div class="thumbnail" data-image="img-6.png">
             <img
               src="images/img-6.png"
               alt=""
@@ -246,7 +246,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail" onclick="scrollToForm()">
+          <div class="thumbnail" data-image="img-7.png">
             <img
               src="images/img-7.png"
               alt=""
@@ -689,14 +689,34 @@
 
         // Thumbnail hover effect
         const thumbnails = document.querySelectorAll(".thumbnail");
-        thumbnails.forEach((thumbnail, index) => {
-          thumbnail.style.backgroundColor = `hsl(${index * 30}, 70%, 90%)`;
-          // thumbnail.addEventListener("click", () => {
-          //   // Here you would typically switch the main image
-          //   // For this example, we'll just show which thumbnail was clicked
-          //   // alert(`Thumbnail ${index + 1} clicked`);
-          // });
-        });
+        const mainImage = document.querySelector('.main-image');
+        // thumbnails.forEach((thumbnail, index) => {
+        //   thumbnail.style.backgroundColor = `hsl(${index * 30}, 70%, 90%)`;
+        //   // thumbnail.addEventListener("click", () => {
+        //   //   // Here you would typically switch the main image
+        //   //   // For this example, we'll just show which thumbnail was clicked
+        //   //   // alert(`Thumbnail ${index + 1} clicked`);
+        //   // });
+        // });
+
+        thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked thumbnail
+                    thumbnail.classList.add('active');
+                    
+                    // Update main image (in a real scenario, you would update the image source)
+                    const imageNumber = thumbnail.getAttribute('data-image');
+                    mainImage.innerHTML = `
+                        <img src="images/${imageNumber}" width="100%" height="100%" alt="">
+                        `;
+                        // <svg width="100%" height="100%" viewBox="0 0 400 400">
+                        //     <rect width="100%" height="100%" fill="#f8f8f8"/>
+                        //     <text x="50%" y="50%" text-anchor="middle" fill="#666">Product Image ${imageNumber}</text>
+                        // </svg>
+                });
+            });
       });
 
       document.addEventListener("DOMContentLoaded", function () {
