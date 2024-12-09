@@ -210,7 +210,7 @@
           />
         </div>
         <div class="thumbnail-container">
-          <div class="thumbnail">
+          <div class="thumbnail" onclick="scrollToForm()">
             <img
               src="images/img-1.jpg"
               alt=""
@@ -219,7 +219,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail">
+          <div class="thumbnail" onclick="scrollToForm()">
             <img
               src="images/img-2.png"
               alt=""
@@ -228,7 +228,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail">
+          <div class="thumbnail" onclick="scrollToForm()">
             <img
               src="images/img-3.png"
               alt=""
@@ -237,7 +237,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail">
+          <div class="thumbnail" onclick="scrollToForm()">
             <img
               src="images/img-6.png"
               alt=""
@@ -246,7 +246,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail">
+          <div class="thumbnail" onclick="scrollToForm()">
             <img
               src="images/img-7.png"
               alt=""
@@ -459,17 +459,6 @@
       </div>
     </div> -->
 
-    <div class="faq-container b" style="display: flex; justify-content: center; align-items: center;">
-      <div class="faq-item b one">
-        <img
-          src="images/offer.png"
-          alt=""
-          onclick="addEventListener('contextmenu', event => event.preventDefault());"
-        />
-        <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button>
-      </div>
-    </div>
-
     <div class="faq-container" style="display: flex; justify-content: center;">
       <div class="faq-item b">
         <img
@@ -491,6 +480,17 @@
         width="100%"
         name="snipercrmform"
       ></iframe>
+    </div>
+
+    <div class="faq-container b" style="display: flex; justify-content: center; align-items: center;">
+      <div class="faq-item b one">
+        <img
+          src="images/offer.png"
+          alt=""
+          onclick="addEventListener('contextmenu', event => event.preventDefault());"
+        />
+        <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button>
+      </div>
     </div>
 
     <section class="why-choose-section">
@@ -682,10 +682,10 @@
           }
         });
 
-        const buyNowBtn = document.querySelector(".buy-now");
-        buyNowBtn.addEventListener("click", () => {
-          alert(`Proceeding to checkout with ${quantity} items`);
-        });
+        // const buyNowBtn = document.querySelector(".buy-now");
+        // buyNowBtn.addEventListener("click", () => {
+        //   alert(`Proceeding to checkout with ${quantity} items`);
+        // });
 
         // Thumbnail hover effect
         const thumbnails = document.querySelectorAll(".thumbnail");
