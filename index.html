@@ -18,65 +18,276 @@
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
     </style>
     <title>Smart Night Lamp</title>
+    <style>
+      /* .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      } */
+
+      .product-images {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-image {
+        width: 100%;
+        aspect-ratio: 1;
+        background: #f0f0f0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .thumbnail-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .thumbnail {
+        aspect-ratio: 1;
+        background: #f0f0f0;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .product-title {
+        font-size: 2em;
+        color: #333;
+      }
+
+      .ratings {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .stars {
+        color: #ffd700;
+      }
+
+      .review-count {
+        color: #666;
+      }
+
+      .price {
+        font-size: 1.5em;
+        color: #2c2c2c;
+        font-weight: bold;
+      }
+
+      .features {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .features li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .features li:nth-of-type(1)::before {
+        content: "💥";
+        /* color: #4caf50; */
+      }
+      .features li:nth-of-type(2)::before {
+        content: "🔋";
+        /* color: #4caf50; */
+      }
+      .features li:nth-of-type(3)::before {
+        content: "🧲";
+        /* color: #4caf50; */
+      }
+      .features li:nth-of-type(4)::before {
+        content: "👁️";
+        /* color: #4caf50; */
+      }
+
+      .quantity-counter {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .quantity-btn {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: #f0f0f0;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+      }
+
+      .quantity-btn:hover {
+        background: #e0e0e0;
+      }
+
+      .quantity {
+        font-size: 1.2em;
+        min-width: 40px;
+        text-align: center;
+      }
+
+      .buy-now {
+        padding: 15px 30px;
+        background: #1f2fc2;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .buy-now:hover {
+        background: #45a049;
+        transform: translateY(-2px);
+      }
+
+      .offers {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        text-align: center;
+      }
+
+      .offers .box {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+      }
+
+      .offers .box img {
+        margin-right: 1rem;
+      }
+    </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="product-images carousel">
-        <div class="main-image carousel-inner">
-          <!-- <svg width="200" height="200" viewBox="0 0 200 200">
-            <rect x="40" y="40" width="120" height="120" fill="#ddd" rx="10" />
-            <path
-              d="M70 100 L90 120 L130 80"
-              stroke="#4CAF50"
-              stroke-width="8"
-              fill="none"
+      <div class="product-images">
+        <div class="carousel" style="width: 100%; height: 100%">
+          <div class="main-image">
+            <!-- <svg width="200" height="200" viewBox="0 0 200 200">
+              <rect x="40" y="40" width="120" height="120" fill="#ddd" rx="10" />
+              <path
+                d="M70 100 L90 120 L130 80"
+                stroke="#4CAF50"
+                stroke-width="8"
+                fill="none"
+              />
+            </svg> -->
+            <div class="carousel-inner" style="width: 100%; height: 100%;">
+              <img
+              src="images/img-1.jpg"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
-          </svg> -->
-          <img
+            <img
+              class="carousel-item"
+              src="images/file-7.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/file-1.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/img-6.png"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
             class="carousel-item"
-            src="images/img-1.jpg"
+            src="images/morelamp.webp"
             alt=""
             width="100%"
             height="100%"
             onclick="addEventListener('contextmenu', event => event.preventDefault());"
-          />
-          <img
-            class="carousel-item"
-            src="images/img-2.png"
-            alt=""
-            width="100%"
-            height="100%"
-            onclick="addEventListener('contextmenu', event => event.preventDefault());"
-          />
-          <img
-            class="carousel-item"
-            src="images/img-3.png"
-            alt=""
-            width="100%"
-            height="100%"
-            onclick="addEventListener('contextmenu', event => event.preventDefault());"
-          />
-          <img
-            class="carousel-item"
-            src="images/img-6.png"
-            alt=""
-            width="100%"
-            height="100%"
-            onclick="addEventListener('contextmenu', event => event.preventDefault());"
-          />
-          <img
-            class="carousel-item"
-            src="images/img-7.png"
-            alt=""
-            width="100%"
-            height="100%"
-            onclick="addEventListener('contextmenu', event => event.preventDefault());"
-          />
+            />
+            <img
+              class="carousel-item"
+              src="images/img-7.png"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/differentplacestoputlamp.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/file-5.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/file-3.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            <img
+              class="carousel-item"
+              src="images/file-3.webp"
+              alt=""
+              width="100%"
+              height="100%"
+              onclick="addEventListener('contextmenu', event => event.preventDefault());"
+            />
+            </div>
+          </div>
+          <button class="carousel-control prev">❮</button>
+          <button class="carousel-control next">❯</button>
         </div>
-        <button class="carousel-control prev">❮</button>
-        <button class="carousel-control next">❯</button>
-        <!-- <div class="thumbnail-container">
+        <div class="thumbnail-container">
           <div class="thumbnail active" data-image="img-1.jpg">
             <img
               src="images/img-1.jpg"
@@ -86,7 +297,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-          <div class="thumbnail" data-image="img-2.png">
+          <div class="thumbnail" data-image="img-2.jpg">
             <img
               src="images/img-2.png"
               alt=""
@@ -122,7 +333,7 @@
               onclick="addEventListener('contextmenu', event => event.preventDefault());"
             />
           </div>
-        </div> -->
+        </div>
       </div>
 
       <!-- <br class="mobile"> -->
@@ -326,6 +537,17 @@
       </div>
     </div> -->
 
+    <div class="faq-container" style="display: flex; justify-content: center">
+      <div class="faq-item b c">
+        <img
+          src="images/whatsinit.png"
+          width="100%"
+          alt=""
+          onclick="addEventListener('contextmenu', event => event.preventDefault());"
+        />
+        <!-- <button class="offer_btn" onclick="scrollToForm()">BUY NOW</button> -->
+      </div>
+    </div>
     <div class="faq-container" style="display: flex; justify-content: center">
       <div class="faq-item b">
         <img
@@ -558,53 +780,6 @@
         const plusBtn = document.querySelector(".plus");
         const quantitySpan = document.querySelector(".quantity");
         let quantity = 1;
-        const carousel = document.querySelector('.carousel-inner');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        let currentIndex = 0;
-        let autoSlideInterval;
-        
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        }
-        
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        }
-        
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 3000);
-        }
-        
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        });
-        
-        // Start auto-sliding
-        startAutoSlide();
-        
-        // Stop auto-sliding when hovering over carousel
-        carousel.addEventListener('mouseenter', stopAutoSlide);
-        carousel.addEventListener('mouseleave', startAutoSlide);
 
         minusBtn.addEventListener("click", () => {
           if (quantity > 1) {
@@ -637,24 +812,24 @@
         //   // });
         // });
 
-        thumbnails.forEach((thumbnail) => {
-          thumbnail.addEventListener("click", () => {
-            // Remove active class from all thumbnails
-            thumbnails.forEach((t) => t.classList.remove("active"));
-            // Add active class to clicked thumbnail
-            thumbnail.classList.add("active");
+        // thumbnails.forEach((thumbnail) => {
+        //   thumbnail.addEventListener("click", () => {
+        //     // Remove active class from all thumbnails
+        //     thumbnails.forEach((t) => t.classList.remove("active"));
+        //     // Add active class to clicked thumbnail
+        //     thumbnail.classList.add("active");
 
-            // Update main image (in a real scenario, you would update the image source)
-            const imageNumber = thumbnail.getAttribute("data-image");
-            mainImage.innerHTML = `
-                        <img src="images/${imageNumber}" width="100%" height="100%" alt="">
-                        `;
-            // <svg width="100%" height="100%" viewBox="0 0 400 400">
-            //     <rect width="100%" height="100%" fill="#f8f8f8"/>
-            //     <text x="50%" y="50%" text-anchor="middle" fill="#666">Product Image ${imageNumber}</text>
-            // </svg>
-          });
-        });
+        //     // Update main image (in a real scenario, you would update the image source)
+        //     const imageNumber = thumbnail.getAttribute("data-image");
+        //     mainImage.innerHTML = `
+        //                 <img src="images/${imageNumber}" width="100%" height="100%" alt="">
+        //                 `;
+        //     // <svg width="100%" height="100%" viewBox="0 0 400 400">
+        //     //     <rect width="100%" height="100%" fill="#f8f8f8"/>
+        //     //     <text x="50%" y="50%" text-anchor="middle" fill="#666">Product Image ${imageNumber}</text>
+        //     // </svg>
+        //   });
+        // });
       });
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -669,6 +844,56 @@
             this.style.transform = "translateY(0)";
           });
         });
+
+        // ---------------------
+
+        const carousel = document.querySelector(".carousel-inner");
+        const items = document.querySelectorAll(".carousel-item");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        function updateCarousel() {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + items.length) % items.length;
+          updateCarousel();
+        }
+
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoSlide() {
+          clearInterval(autoSlideInterval);
+        }
+
+        prevBtn.addEventListener("click", () => {
+          prevSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          nextSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        });
+
+        // Start auto-sliding
+        startAutoSlide();
+
+        // Stop auto-sliding when hovering over carousel
+        carousel.addEventListener("mouseenter", stopAutoSlide);
+        carousel.addEventListener("mouseleave", startAutoSlide);
       });
 
       function scrollToForm() {
