@@ -563,20 +563,48 @@
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
         let currentIndex = 0;
+        let autoSlideInterval;
         
         function updateCarousel() {
             carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
         
-        prevBtn.addEventListener('click', () => {
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
             currentIndex = (currentIndex - 1 + items.length) % items.length;
             updateCarousel();
+        }
+        
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+        
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
         });
         
         nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
         });
+        
+        // Start auto-sliding
+        startAutoSlide();
+        
+        // Stop auto-sliding when hovering over carousel
+        carousel.addEventListener('mouseenter', stopAutoSlide);
+        carousel.addEventListener('mouseleave', startAutoSlide);
 
         minusBtn.addEventListener("click", () => {
           if (quantity > 1) {
