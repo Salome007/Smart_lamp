@@ -622,9 +622,9 @@ footer {
   .faq-container .faq-item.b.c {
     background: url(images/whatsinit.png);
     background-size: cover;
-    width: 80%;
+    width: 100%;
     /* width: 30em; */
-    height: 9em;
+    height: 11.5em;
   }
 
   .faq-container .faq-item.b.one{
